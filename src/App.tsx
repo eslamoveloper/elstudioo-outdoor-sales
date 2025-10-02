@@ -124,104 +124,97 @@ function App() {
         </div>
       </div>
 
-      {/* Featured Events Section - Show Your Way to Booth */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black via-orange-950/10 to-black">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/10 backdrop-blur-xl rounded-full border border-orange-500/20 mb-6">
-              <Camera className="w-4 h-4 text-orange-400" />
-              <span className="text-orange-300 text-sm font-medium">FEATURED SHOWCASE</span>
-            </div>
-            <h2 className="text-4xl md:text-6xl font-black text-white mb-4">
-              Show Your Way to Booth
-            </h2>
-            <p className="text-gray-400 text-lg">
-              تغطية احترافية للفعاليات والمعارض
-            </p>
-          </div>
-
-          <div className="relative group max-w-5xl mx-auto">
-            <div className="absolute -inset-1 bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition duration-1000"></div>
-            <a 
-              href={featuredShowcase.videoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative block bg-gradient-to-br from-gray-900 to-black rounded-3xl overflow-hidden border border-white/10 group-hover:border-orange-500/50 transition-all duration-300"
-            >
-              <div className="aspect-video bg-gradient-to-br from-orange-900/20 to-pink-900/20 flex items-center justify-center relative overflow-hidden">
-                {/* Play Button Overlay */}
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
-                <div className="relative z-10 w-24 h-24 bg-orange-500/90 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:bg-orange-400 transition-all duration-300 shadow-2xl">
-                  <Play className="w-12 h-12 text-white ml-1" fill="white" />
-                </div>
-                {/* Animated Border */}
-                <div className="absolute inset-0 border-4 border-orange-500/0 group-hover:border-orange-500/30 rounded-3xl transition-all duration-300"></div>
-              </div>
-              <div className="p-8 text-center">
-                <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-orange-300 transition-colors">
-                  {featuredShowcase.title}
-                </h3>
-                <p className="text-gray-400">
-                  شاهد كيف نوثق طريقك إلى البوث بأسلوب سينمائي احترافي
-                </p>
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Events & Live Stream Section */}
-      <section className="relative py-32 px-4 sm:px-6 lg:px-8">
+      {/* Events Photography Section */}
+      <section className="relative py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black via-orange-950/10 to-black">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-500/10 backdrop-blur-xl rounded-full border border-red-500/20 mb-6">
-              <Radio className="w-4 h-4 text-red-400" />
-              <span className="text-red-300 text-sm font-medium">تخصصنا</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/10 backdrop-blur-xl rounded-full border border-orange-500/20 mb-6">
+              <Camera className="w-4 h-4 text-orange-400" />
+              <span className="text-orange-300 text-sm font-medium">تخصصنا</span>
             </div>
             <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
-              Events & Live Stream
+              Events Photography
             </h2>
             <p className="text-gray-400 text-xl max-w-3xl mx-auto">
               تغطية شاملة للفعاليات والمؤتمرات مع خدمات البث المباشر الاحترافية
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {eventsCategories.map((category) => (
-              <a
-                key={category.id}
-                href={category.url}
+          {/* Events Categories - Vertical Stack */}
+          <div className="flex flex-col gap-8 max-w-6xl mx-auto">
+            
+            {/* Featured Video - Show Your Way to Booth */}
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition duration-500"></div>
+              <a 
+                href={featuredShowcase.videoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative"
+                className="relative block bg-gradient-to-br from-gray-900 to-black backdrop-blur-xl rounded-3xl p-12 border border-white/10 group-hover:border-orange-500/50 transition-all duration-300 overflow-hidden"
               >
-                <div className="absolute -inset-1 bg-gradient-to-r from-orange-600 to-red-600 rounded-3xl blur-lg opacity-30 group-hover:opacity-50 transition duration-500"></div>
-                <div className="relative bg-gradient-to-br from-gray-900 to-black backdrop-blur-xl rounded-3xl p-10 border border-white/10 h-full group-hover:border-orange-500/50 transition-all duration-300 overflow-hidden">
-                  {/* Animated Background */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-orange-600/0 to-red-600/0 group-hover:from-orange-600/10 group-hover:to-red-600/10 transition-all duration-500"></div>
+                {/* Animated Background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-600/0 to-red-600/0 group-hover:from-orange-600/10 group-hover:to-red-600/10 transition-all duration-500"></div>
+                
+                <div className="relative z-10 flex items-center gap-8">
+                  <div className="w-24 h-24 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <Play className="w-12 h-12 text-orange-400" />
+                  </div>
                   
-                  <div className="relative z-10">
-                    <div className="w-20 h-20 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
-                      {category.icon}
-                    </div>
-                    
-                    <h3 className="text-3xl font-bold text-white mb-3 text-right group-hover:text-orange-300 transition-colors">
-                      {category.title}
+                  <div className="flex-1 text-right">
+                    <h3 className="text-4xl font-bold text-white mb-3 group-hover:text-orange-300 transition-colors">
+                      Show Your Way to Booth
                     </h3>
-                    <p className="text-lg text-orange-400 mb-4 text-right font-medium">
-                      {category.titleEn}
+                    <p className="text-xl text-orange-400 mb-4 font-medium">
+                      Featured Showcase
                     </p>
-                    <p className="text-base text-gray-400 text-right leading-relaxed mb-6">
-                      {category.description}
+                    <p className="text-lg text-gray-400 leading-relaxed">
+                      شاهد كيف نوثق طريقك إلى البوث بأسلوب سينمائي احترافي
                     </p>
+                  </div>
 
-                    <div className="flex items-center justify-end gap-2 text-orange-400 group-hover:text-orange-300 transition-colors">
-                      <span className="text-sm font-medium">مشاهدة الأعمال</span>
-                      <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </div>
+                  <div className="flex items-center gap-2 text-orange-400 group-hover:text-orange-300 transition-colors flex-shrink-0">
+                    <ChevronRight className="w-8 h-8 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
               </a>
+            </div>
+
+            {/* Events Categories */}
+            {eventsCategories.map((category) => (
+              <div key={category.id} className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-orange-600 to-red-600 rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition duration-500"></div>
+                <a
+                  href={category.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative block bg-gradient-to-br from-gray-900 to-black backdrop-blur-xl rounded-3xl p-12 border border-white/10 group-hover:border-orange-500/50 transition-all duration-300 overflow-hidden"
+                >
+                  {/* Animated Background */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-orange-600/0 to-red-600/0 group-hover:from-orange-600/10 group-hover:to-red-600/10 transition-all duration-500"></div>
+                  
+                  <div className="relative z-10 flex items-center gap-8">
+                    <div className="w-24 h-24 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      {category.icon}
+                    </div>
+                    
+                    <div className="flex-1 text-right">
+                      <h3 className="text-4xl font-bold text-white mb-3 group-hover:text-orange-300 transition-colors">
+                        {category.title}
+                      </h3>
+                      <p className="text-xl text-orange-400 mb-4 font-medium">
+                        {category.titleEn}
+                      </p>
+                      <p className="text-lg text-gray-400 leading-relaxed">
+                        {category.description}
+                      </p>
+                    </div>
+
+                    <div className="flex items-center gap-2 text-orange-400 group-hover:text-orange-300 transition-colors flex-shrink-0">
+                      <ChevronRight className="w-8 h-8 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </a>
+              </div>
             ))}
           </div>
         </div>
