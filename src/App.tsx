@@ -1,4 +1,4 @@
-import { Play, Phone, MessageCircle, Video, Award, Sparkles, ChevronRight, Film, Camera, Clapperboard, Radio } from 'lucide-react'
+import { Play, Phone, MessageCircle, Video, Award, Sparkles, ChevronRight, Film, Camera, Clapperboard, Radio, Globe, Check, Tag, TrendingDown } from 'lucide-react'
 
 function App() {
 
@@ -48,27 +48,56 @@ function App() {
   const featuredShowcase = {
     title: 'Show Your Way to Booth',
     videoUrl: 'https://vimeo.com/showcase/events-media-production?video=798508463',
-    thumbnail: 'https://i.vimeocdn.com/video/1579579463-d8f8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e8'
+    thumbnail: 'https://i.vimeocdn.com/video/1579579463-d8f8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e8',
+    price: 1950,
+    discountPrice: 1500,
+    savings: 450
   }
 
-  const eventsCategories = [
+  const eventsPackages = [
     {
-      id: 'events',
-      title: 'تصوير ومونتاج الـ Events',
-      titleEn: 'Events Media Production',
+      id: 'package1',
+      title: 'باقة البوث الأساسية',
+      titleEn: 'Basic Booth Package',
       url: 'https://vimeo.com/showcase/events-media-production',
       icon: <Camera className="w-8 h-8" />,
-      description: 'تغطية شاملة للفعاليات والمؤتمرات بأعلى جودة'
+      description: '3 فيديوهات مع موسيقى للبوث + فيديو مقابلة واحد',
+      descriptionEn: '3 videos with music for booth + 1 video interview',
+      features: ['3 فيديوهات احترافية', 'موسيقى مخصصة', 'فيديو مقابلة واحد', 'مونتاج احترافي'],
+      price: 2950,
+      discountPrice: 2500,
+      savings: 450,
+      comboPrice: 3500,
+      comboOriginal: 4000,
+      comboSavings: 500
     },
     {
-      id: 'livestream',
-      title: 'الـ Live Stream للـ Events',
-      titleEn: 'Live Stream for Events',
-      url: 'https://vimeo.com/showcase/livestream-for-events',
-      icon: <Radio className="w-8 h-8" />,
-      description: 'بث مباشر احترافي للفعاليات والمؤتمرات'
+      id: 'package2',
+      title: 'باقة البوث المتكاملة',
+      titleEn: 'Complete Booth Package',
+      url: 'https://vimeo.com/showcase/events-media-production',
+      icon: <Video className="w-8 h-8" />,
+      description: '3 فيديوهات + 5 ستوريز 15 ثانية + 10 صور احترافية',
+      descriptionEn: '3 videos + 5 stories (15 sec) + 10 professional photos',
+      features: ['3 فيديوهات احترافية', '5 ستوريز (15 ثانية)', '10 صور احترافية', 'مونتاج وتحرير كامل'],
+      price: 3750,
+      discountPrice: 3500,
+      savings: 250,
+      comboPrice: 4500,
+      comboOriginal: 5000,
+      comboSavings: 500,
+      popular: true
     }
   ]
+
+  const livestreamService = {
+    id: 'livestream',
+    title: 'الـ Live Stream للـ Events',
+    titleEn: 'Live Stream for Events',
+    url: 'https://vimeo.com/showcase/livestream-for-events',
+    icon: <Radio className="w-8 h-8" />,
+    description: 'بث مباشر احترافي للفعاليات والمؤتمرات'
+  }
 
   const handleWhatsApp = () => {
     window.open('https://wa.me/201150037441', '_blank')
@@ -133,89 +162,250 @@ function App() {
               <span className="text-orange-300 text-sm font-medium">تخصصنا</span>
             </div>
             <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
-              Events Photography
+              Event Videography and Photography
             </h2>
             <p className="text-gray-400 text-xl max-w-3xl mx-auto">
               تغطية شاملة للفعاليات والمؤتمرات مع خدمات البث المباشر الاحترافية
             </p>
           </div>
 
-          {/* Events Categories - Vertical Stack */}
+          {/* Pricing Packages - Vertical Stack */}
           <div className="flex flex-col gap-8 max-w-6xl mx-auto">
             
-            {/* Featured Video - Show Your Way to Booth */}
+            {/* Show Your Way to Booth - With Pricing */}
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition duration-500"></div>
-              <a 
-                href={featuredShowcase.videoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative block bg-gradient-to-br from-gray-900 to-black backdrop-blur-xl rounded-3xl p-12 border border-white/10 group-hover:border-orange-500/50 transition-all duration-300 overflow-hidden"
-              >
+              <div className="relative bg-gradient-to-br from-gray-900 to-black backdrop-blur-xl rounded-3xl overflow-hidden border border-white/10 group-hover:border-orange-500/50 transition-all duration-300">
                 {/* Animated Background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-600/0 to-red-600/0 group-hover:from-orange-600/10 group-hover:to-red-600/10 transition-all duration-500"></div>
                 
+                <div className="relative z-10 p-8 md:p-12">
+                  <div className="flex flex-col lg:flex-row gap-8 items-start">
+                    {/* Left: Video Preview */}
+                    <a 
+                      href={featuredShowcase.videoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-shrink-0"
+                    >
+                      <div className="w-32 h-32 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 cursor-pointer">
+                        <Play className="w-16 h-16 text-orange-400" />
+                      </div>
+                    </a>
+                    
+                    {/* Center: Content */}
+                    <div className="flex-1 text-right">
+                      <h3 className="text-3xl md:text-4xl font-bold text-white mb-3 group-hover:text-orange-300 transition-colors">
+                        Show Your Way to Booth
+                      </h3>
+                      <p className="text-lg text-gray-400 leading-relaxed mb-4">
+                        شاهد كيف نوثق طريقك إلى البوث بأسلوب سينمائي احترافي
+                      </p>
+                      <a 
+                        href={featuredShowcase.videoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 transition-colors text-sm"
+                      >
+                        <span>مشاهدة نماذج الأعمال</span>
+                        <ChevronRight className="w-4 h-4" />
+                      </a>
+                    </div>
+
+                    {/* Right: Pricing */}
+                    <div className="flex-shrink-0 bg-gradient-to-br from-orange-500/10 to-red-500/10 rounded-2xl p-6 border border-orange-500/30 min-w-[280px]">
+                      <div className="text-center">
+                        <div className="inline-flex items-center gap-2 bg-red-500/20 px-3 py-1 rounded-full mb-4">
+                          <TrendingDown className="w-4 h-4 text-red-400" />
+                          <span className="text-red-400 text-sm font-bold">وفر {featuredShowcase.savings} جنيه</span>
+                        </div>
+                        
+                        <div className="mb-4">
+                          <p className="text-gray-400 text-sm mb-1">السعر الأصلي</p>
+                          <p className="text-gray-500 text-2xl line-through">{featuredShowcase.price} EGP</p>
+                        </div>
+                        
+                        <div className="mb-6">
+                          <p className="text-orange-400 text-sm mb-1">السعر بعد الخصم</p>
+                          <p className="text-white text-5xl font-black">{featuredShowcase.discountPrice}</p>
+                          <p className="text-orange-400 text-xl font-bold">EGP</p>
+                        </div>
+
+                        <button
+                          onClick={handleWhatsApp}
+                          className="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold py-4 px-6 rounded-xl hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-green-500/50"
+                        >
+                          احجز الآن
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Events Packages */}
+            {eventsPackages.map((pkg) => (
+              <div key={pkg.id} className="relative group">
+                {pkg.popular && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
+                    <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-black font-bold px-6 py-2 rounded-full text-sm shadow-lg">
+                      ⭐ الأكثر طلباً
+                    </div>
+                  </div>
+                )}
+                
+                <div className="absolute -inset-1 bg-gradient-to-r from-orange-600 to-red-600 rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition duration-500"></div>
+                <div className="relative bg-gradient-to-br from-gray-900 to-black backdrop-blur-xl rounded-3xl overflow-hidden border border-white/10 group-hover:border-orange-500/50 transition-all duration-300">
+                  {/* Animated Background */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-orange-600/0 to-red-600/0 group-hover:from-orange-600/10 group-hover:to-red-600/10 transition-all duration-500"></div>
+                  
+                  <div className="relative z-10 p-8 md:p-12">
+                    <div className="flex flex-col lg:flex-row gap-8 items-start">
+                      {/* Left: Icon */}
+                      <div className="flex-shrink-0">
+                        <div className="w-24 h-24 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          {pkg.icon}
+                        </div>
+                      </div>
+                      
+                      {/* Center: Content */}
+                      <div className="flex-1 text-right">
+                        <h3 className="text-3xl md:text-4xl font-bold text-white mb-2 group-hover:text-orange-300 transition-colors">
+                          {pkg.title}
+                        </h3>
+                        <p className="text-lg text-orange-400 mb-4 font-medium">
+                          {pkg.titleEn}
+                        </p>
+                        <p className="text-base text-gray-400 mb-6 leading-relaxed">
+                          {pkg.description}
+                        </p>
+                        
+                        {/* Features List */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
+                          {pkg.features.map((feature, idx) => (
+                            <div key={idx} className="flex items-center gap-2 text-gray-300">
+                              <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                              <span className="text-sm">{feature}</span>
+                            </div>
+                          ))}
+                        </div>
+
+                        <a 
+                          href={pkg.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 transition-colors text-sm"
+                        >
+                          <span>مشاهدة نماذج الأعمال</span>
+                          <ChevronRight className="w-4 h-4" />
+                        </a>
+                      </div>
+
+                      {/* Right: Pricing */}
+                      <div className="flex-shrink-0 space-y-4 min-w-[280px]">
+                        {/* Regular Package Price */}
+                        <div className="bg-gradient-to-br from-orange-500/10 to-red-500/10 rounded-2xl p-6 border border-orange-500/30">
+                          <div className="text-center">
+                            <div className="inline-flex items-center gap-2 bg-red-500/20 px-3 py-1 rounded-full mb-4">
+                              <Tag className="w-4 h-4 text-red-400" />
+                              <span className="text-red-400 text-sm font-bold">وفر {pkg.savings} جنيه</span>
+                            </div>
+                            
+                            <div className="mb-3">
+                              <p className="text-gray-500 text-xl line-through">{pkg.price} EGP</p>
+                            </div>
+                            
+                            <div className="mb-4">
+                              <p className="text-white text-4xl font-black">{pkg.discountPrice}</p>
+                              <p className="text-orange-400 text-lg font-bold">EGP</p>
+                            </div>
+
+                            <button
+                              onClick={handleWhatsApp}
+                              className="w-full bg-gradient-to-r from-orange-500 to-red-600 text-white font-bold py-3 px-6 rounded-xl hover:scale-105 transition-all duration-300"
+                            >
+                              احجز الباقة
+                            </button>
+                          </div>
+                        </div>
+
+                        {/* Combo Deal */}
+                        <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-2xl p-6 border-2 border-green-500/50 relative overflow-hidden">
+                          <div className="absolute top-0 right-0 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+                            عرض خاص 🔥
+                          </div>
+                          
+                          <div className="text-center mt-4">
+                            <p className="text-green-400 text-sm font-bold mb-2">مع Show Your Way</p>
+                            
+                            <div className="inline-flex items-center gap-2 bg-green-500/20 px-3 py-1 rounded-full mb-3">
+                              <TrendingDown className="w-4 h-4 text-green-400" />
+                              <span className="text-green-400 text-sm font-bold">وفر {pkg.comboSavings} جنيه</span>
+                            </div>
+                            
+                            <div className="mb-2">
+                              <p className="text-gray-500 text-lg line-through">{pkg.comboOriginal} EGP</p>
+                            </div>
+                            
+                            <div className="mb-4">
+                              <p className="text-white text-4xl font-black">{pkg.comboPrice}</p>
+                              <p className="text-green-400 text-lg font-bold">EGP</p>
+                            </div>
+
+                            <button
+                              onClick={handleWhatsApp}
+                              className="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold py-3 px-6 rounded-xl hover:scale-105 transition-all duration-300 shadow-lg"
+                            >
+                              احجز العرض الخاص
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            {/* Live Stream Service */}
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-pink-600 rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition duration-500"></div>
+              <a
+                href={livestreamService.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative block bg-gradient-to-br from-gray-900 to-black backdrop-blur-xl rounded-3xl p-12 border border-white/10 group-hover:border-red-500/50 transition-all duration-300 overflow-hidden"
+              >
+                {/* Animated Background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-red-600/0 to-pink-600/0 group-hover:from-red-600/10 group-hover:to-pink-600/10 transition-all duration-500"></div>
+                
                 <div className="relative z-10 flex items-center gap-8">
-                  <div className="w-24 h-24 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                    <Play className="w-12 h-12 text-orange-400" />
+                  <div className="w-24 h-24 bg-gradient-to-br from-red-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    {livestreamService.icon}
                   </div>
                   
                   <div className="flex-1 text-right">
-                    <h3 className="text-4xl font-bold text-white mb-3 group-hover:text-orange-300 transition-colors">
-                      Show Your Way to Booth
+                    <h3 className="text-4xl font-bold text-white mb-3 group-hover:text-red-300 transition-colors">
+                      {livestreamService.title}
                     </h3>
-                    <p className="text-xl text-orange-400 mb-4 font-medium">
-                      Featured Showcase
+                    <p className="text-xl text-red-400 mb-4 font-medium">
+                      {livestreamService.titleEn}
                     </p>
                     <p className="text-lg text-gray-400 leading-relaxed">
-                      شاهد كيف نوثق طريقك إلى البوث بأسلوب سينمائي احترافي
+                      {livestreamService.description}
+                    </p>
+                    <p className="text-sm text-gray-500 mt-4">
+                      اتصل بنا للحصول على عرض سعر مخصص
                     </p>
                   </div>
 
-                  <div className="flex items-center gap-2 text-orange-400 group-hover:text-orange-300 transition-colors flex-shrink-0">
+                  <div className="flex items-center gap-2 text-red-400 group-hover:text-red-300 transition-colors flex-shrink-0">
                     <ChevronRight className="w-8 h-8 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
               </a>
             </div>
-
-            {/* Events Categories */}
-            {eventsCategories.map((category) => (
-              <div key={category.id} className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-orange-600 to-red-600 rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition duration-500"></div>
-                <a
-                  href={category.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative block bg-gradient-to-br from-gray-900 to-black backdrop-blur-xl rounded-3xl p-12 border border-white/10 group-hover:border-orange-500/50 transition-all duration-300 overflow-hidden"
-                >
-                  {/* Animated Background */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-orange-600/0 to-red-600/0 group-hover:from-orange-600/10 group-hover:to-red-600/10 transition-all duration-500"></div>
-                  
-                  <div className="relative z-10 flex items-center gap-8">
-                    <div className="w-24 h-24 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                      {category.icon}
-                    </div>
-                    
-                    <div className="flex-1 text-right">
-                      <h3 className="text-4xl font-bold text-white mb-3 group-hover:text-orange-300 transition-colors">
-                        {category.title}
-                      </h3>
-                      <p className="text-xl text-orange-400 mb-4 font-medium">
-                        {category.titleEn}
-                      </p>
-                      <p className="text-lg text-gray-400 leading-relaxed">
-                        {category.description}
-                      </p>
-                    </div>
-
-                    <div className="flex items-center gap-2 text-orange-400 group-hover:text-orange-300 transition-colors flex-shrink-0">
-                      <ChevronRight className="w-8 h-8 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                </a>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -410,9 +600,29 @@ function App() {
 
               <div className="text-center pt-8 border-t border-white/10">
                 <p className="text-gray-400 text-sm mb-2">رقم الهاتف</p>
-                <a href="tel:+201150037441" className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400 hover:from-purple-300 hover:to-pink-300 transition-all">
+                <a href="tel:+201150037441" className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400 hover:from-purple-300 hover:to-pink-300 transition-all block mb-8">
                   +20 115 003 7441
                 </a>
+
+                {/* Website Link */}
+                <div className="mt-8 pt-8 border-t border-white/10">
+                  <p className="text-gray-400 text-base mb-4">
+                    للمزيد من التفاصيل والمعلومات يرجى زيارة موقعنا
+                  </p>
+                  <p className="text-gray-500 text-sm mb-4">
+                    For more details and information, please visit our website
+                  </p>
+                  <a 
+                    href="https://elstudioo.com/" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-3 bg-gradient-to-r from-purple-500/20 to-pink-500/20 hover:from-purple-500/30 hover:to-pink-500/30 text-white font-semibold py-4 px-8 rounded-2xl transition-all duration-300 hover:scale-105 border border-purple-500/30 hover:border-purple-400/50"
+                  >
+                    <Globe className="w-6 h-6 text-purple-400 group-hover:rotate-12 transition-transform" />
+                    <span className="text-lg bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-pink-300">elstudioo.com</span>
+                    <ChevronRight className="w-5 h-5 text-purple-400 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
