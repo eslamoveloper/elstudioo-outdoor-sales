@@ -46,7 +46,8 @@ function App() {
   ]
 
   const featuredShowcase = {
-    title: 'Show Your Way to Booth',
+    title: 'تصوير طريقك إلى البوث',
+    titleEn: 'Show Your Way to Booth',
     videoUrl: 'https://vimeo.com/showcase/events-media-production?video=798508463',
     thumbnail: 'https://i.vimeocdn.com/video/1579579463-d8f8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e8e8',
     price: 1950,
@@ -162,7 +163,7 @@ function App() {
               <span className="text-orange-300 text-sm font-medium">تخصصنا</span>
             </div>
             <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
-              Event Videography and Photography
+              التصوير الفوتوغرافي والفيديو للفعاليات
             </h2>
             <p className="text-gray-400 text-xl max-w-3xl mx-auto">
               تغطية شاملة للفعاليات والمؤتمرات مع خدمات البث المباشر الاحترافية
@@ -196,9 +197,12 @@ function App() {
                     {/* Center: Content */}
                     <div className="flex-1 text-right">
                       <h3 className="text-3xl md:text-4xl font-bold text-white mb-3 group-hover:text-orange-300 transition-colors">
-                        Show Your Way to Booth
+                        {featuredShowcase.title}
                       </h3>
-                      <p className="text-lg text-gray-400 leading-relaxed mb-4">
+                      <p className="text-lg text-orange-400 mb-2 font-medium">
+                        {featuredShowcase.titleEn}
+                      </p>
+                      <p className="text-base text-gray-400 leading-relaxed mb-4">
                         شاهد كيف نوثق طريقك إلى البوث بأسلوب سينمائي احترافي
                       </p>
                       <a 
@@ -337,7 +341,7 @@ function App() {
                           </div>
                           
                           <div className="text-center mt-4">
-                            <p className="text-green-400 text-sm font-bold mb-2">مع Show Your Way</p>
+                            <p className="text-green-400 text-sm font-bold mb-2">مع تصوير طريقك إلى البوث</p>
                             
                             <div className="inline-flex items-center gap-2 bg-green-500/20 px-3 py-1 rounded-full mb-3">
                               <TrendingDown className="w-4 h-4 text-green-400" />
