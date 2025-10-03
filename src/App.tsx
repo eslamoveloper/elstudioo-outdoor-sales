@@ -1,4 +1,4 @@
-import { Play, Phone, MessageCircle, Video, Award, Sparkles, ChevronRight, Film, Camera, Clapperboard, Radio, Globe, Check, Tag, TrendingDown } from 'lucide-react'
+import { Play, Phone, MessageCircle, Video, Award, Sparkles, ChevronRight, Film, Camera, Clapperboard, Radio, Globe, Check, Tag, TrendingDown, X } from 'lucide-react'
 
 function App() {
 
@@ -62,9 +62,9 @@ function App() {
       titleEn: 'Basic Booth Package',
       url: 'https://vimeo.com/showcase/events-media-production',
       icon: <Camera className="w-8 h-8" />,
-      description: '3 فيديوهات مع موسيقى للبوث + فيديو مقابلة واحد',
-      descriptionEn: '3 videos with music for booth + 1 video interview',
-      features: ['3 فيديوهات احترافية', 'موسيقى مخصصة', 'فيديو مقابلة واحد', 'مونتاج احترافي'],
+      description: '3 فيديوهات للبوث + فيديو مقابلة واحد',
+      descriptionEn: '3 videos for booth + 1 video interview',
+      features: ['3 فيديوهات احترافية', 'فيديو مقابلة واحد', 'مونتاج احترافي'],
       price: 2950,
       discountPrice: 2500,
       savings: 450,
@@ -78,9 +78,9 @@ function App() {
       titleEn: 'Complete Booth Package',
       url: 'https://vimeo.com/showcase/events-media-production',
       icon: <Video className="w-8 h-8" />,
-      description: '3 فيديوهات + 5 ستوريز 15 ثانية + 10 صور احترافية',
-      descriptionEn: '3 videos + 5 stories (15 sec) + 10 professional photos',
-      features: ['3 فيديوهات احترافية', '5 ستوريز (15 ثانية)', '10 صور احترافية', 'مونتاج وتحرير كامل'],
+      description: '3 فيديوهات + فيديو مقابلة + 5 ستوريز 15 ثانية + 10 صور احترافية',
+      descriptionEn: '3 videos + 1 interview + 5 stories (15 sec) + 10 professional photos',
+      features: ['3 فيديوهات احترافية', 'فيديو مقابلة واحد', '5 ستوريز (15 ثانية)', '10 صور احترافية', 'مونتاج وتحرير كامل'],
       price: 3750,
       discountPrice: 3500,
       savings: 250,
@@ -409,6 +409,187 @@ function App() {
                   </div>
                 </div>
               </a>
+            </div>
+          </div>
+
+          {/* Pricing Comparison Table */}
+          <div className="max-w-7xl mx-auto mt-20">
+            <div className="text-center mb-12">
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                قارن بين الباقات
+              </h3>
+              <p className="text-gray-400 text-lg">
+                اختر الباقة المناسبة لاحتياجاتك
+              </p>
+            </div>
+
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-orange-600 via-purple-600 to-pink-600 rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition duration-1000"></div>
+              <div className="relative bg-gradient-to-br from-gray-900 to-black backdrop-blur-2xl rounded-3xl overflow-hidden border border-white/10">
+                
+                {/* Table Header */}
+                <div className="grid grid-cols-4 gap-4 p-6 border-b border-white/10 bg-gradient-to-r from-orange-500/10 to-purple-500/10">
+                  <div className="text-right">
+                    <h4 className="text-white font-bold text-lg">المميزات</h4>
+                  </div>
+                  <div className="text-center">
+                    <h4 className="text-orange-400 font-bold text-lg mb-1">تصوير طريقك إلى البوث</h4>
+                    <p className="text-2xl font-black text-white">1500 <span className="text-sm text-gray-400">EGP</span></p>
+                  </div>
+                  <div className="text-center">
+                    <h4 className="text-orange-400 font-bold text-lg mb-1">باقة البوث الأساسية</h4>
+                    <p className="text-2xl font-black text-white">2500 <span className="text-sm text-gray-400">EGP</span></p>
+                  </div>
+                  <div className="text-center relative">
+                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                      <span className="bg-yellow-500 text-black text-xs font-bold px-2 py-1 rounded">الأفضل</span>
+                    </div>
+                    <h4 className="text-orange-400 font-bold text-lg mb-1">باقة البوث المتكاملة</h4>
+                    <p className="text-2xl font-black text-white">3500 <span className="text-sm text-gray-400">EGP</span></p>
+                  </div>
+                </div>
+
+                {/* Table Rows */}
+                <div className="divide-y divide-white/5">
+                  {/* Feature 1 */}
+                  <div className="grid grid-cols-4 gap-4 p-6 hover:bg-white/5 transition-colors">
+                    <div className="text-right text-gray-300">فيديو توثيق الطريق للبوث</div>
+                    <div className="flex justify-center">
+                      <Check className="w-6 h-6 text-green-400" />
+                    </div>
+                    <div className="flex justify-center">
+                      <X className="w-6 h-6 text-gray-600" />
+                    </div>
+                    <div className="flex justify-center">
+                      <X className="w-6 h-6 text-gray-600" />
+                    </div>
+                  </div>
+
+                  {/* Feature 2 */}
+                  <div className="grid grid-cols-4 gap-4 p-6 hover:bg-white/5 transition-colors">
+                    <div className="text-right text-gray-300">3 فيديوهات احترافية</div>
+                    <div className="flex justify-center">
+                      <X className="w-6 h-6 text-gray-600" />
+                    </div>
+                    <div className="flex justify-center">
+                      <Check className="w-6 h-6 text-green-400" />
+                    </div>
+                    <div className="flex justify-center">
+                      <Check className="w-6 h-6 text-green-400" />
+                    </div>
+                  </div>
+
+                  {/* Feature 3 */}
+                  <div className="grid grid-cols-4 gap-4 p-6 hover:bg-white/5 transition-colors">
+                    <div className="text-right text-gray-300">فيديو مقابلة واحد</div>
+                    <div className="flex justify-center">
+                      <X className="w-6 h-6 text-gray-600" />
+                    </div>
+                    <div className="flex justify-center">
+                      <Check className="w-6 h-6 text-green-400" />
+                    </div>
+                    <div className="flex justify-center">
+                      <Check className="w-6 h-6 text-green-400" />
+                    </div>
+                  </div>
+
+                  {/* Feature 5 */}
+                  <div className="grid grid-cols-4 gap-4 p-6 hover:bg-white/5 transition-colors">
+                    <div className="text-right text-gray-300">5 ستوريز (15 ثانية)</div>
+                    <div className="flex justify-center">
+                      <X className="w-6 h-6 text-gray-600" />
+                    </div>
+                    <div className="flex justify-center">
+                      <X className="w-6 h-6 text-gray-600" />
+                    </div>
+                    <div className="flex justify-center">
+                      <Check className="w-6 h-6 text-green-400" />
+                    </div>
+                  </div>
+
+                  {/* Feature 6 */}
+                  <div className="grid grid-cols-4 gap-4 p-6 hover:bg-white/5 transition-colors">
+                    <div className="text-right text-gray-300">10 صور احترافية</div>
+                    <div className="flex justify-center">
+                      <X className="w-6 h-6 text-gray-600" />
+                    </div>
+                    <div className="flex justify-center">
+                      <X className="w-6 h-6 text-gray-600" />
+                    </div>
+                    <div className="flex justify-center">
+                      <Check className="w-6 h-6 text-green-400" />
+                    </div>
+                  </div>
+
+                  {/* Feature 7 */}
+                  <div className="grid grid-cols-4 gap-4 p-6 hover:bg-white/5 transition-colors">
+                    <div className="text-right text-gray-300">مونتاج احترافي</div>
+                    <div className="flex justify-center">
+                      <Check className="w-6 h-6 text-green-400" />
+                    </div>
+                    <div className="flex justify-center">
+                      <Check className="w-6 h-6 text-green-400" />
+                    </div>
+                    <div className="flex justify-center">
+                      <Check className="w-6 h-6 text-green-400" />
+                    </div>
+                  </div>
+
+                  {/* Feature 8 */}
+                  <div className="grid grid-cols-4 gap-4 p-6 hover:bg-white/5 transition-colors">
+                    <div className="text-right text-gray-300">تسليم سريع</div>
+                    <div className="flex justify-center">
+                      <Check className="w-6 h-6 text-green-400" />
+                    </div>
+                    <div className="flex justify-center">
+                      <Check className="w-6 h-6 text-green-400" />
+                    </div>
+                    <div className="flex justify-center">
+                      <Check className="w-6 h-6 text-green-400" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Combo Deals Footer */}
+                <div className="p-6 bg-gradient-to-r from-green-500/10 to-emerald-500/10 border-t-2 border-green-500/30">
+                  <div className="text-center mb-4">
+                    <h4 className="text-green-400 font-bold text-xl mb-2">🔥 عروض الباقات المجمعة</h4>
+                    <p className="text-gray-400 text-sm">وفر أكثر عند الجمع بين الباقات</p>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="bg-black/40 rounded-xl p-4 border border-green-500/30">
+                      <p className="text-white font-bold mb-2">تصوير طريقك + الباقة الأساسية</p>
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <span className="text-gray-500 line-through text-sm">4000 EGP</span>
+                          <span className="text-green-400 font-black text-2xl ml-2">3500 EGP</span>
+                        </div>
+                        <span className="bg-green-500/20 text-green-400 text-xs font-bold px-3 py-1 rounded-full">وفر 500</span>
+                      </div>
+                    </div>
+                    <div className="bg-black/40 rounded-xl p-4 border border-green-500/30">
+                      <p className="text-white font-bold mb-2">تصوير طريقك + الباقة المتكاملة</p>
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <span className="text-gray-500 line-through text-sm">5000 EGP</span>
+                          <span className="text-green-400 font-black text-2xl ml-2">4500 EGP</span>
+                        </div>
+                        <span className="bg-green-500/20 text-green-400 text-xs font-bold px-3 py-1 rounded-full">وفر 500</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* CTA Footer */}
+                <div className="p-6 text-center bg-gradient-to-r from-orange-500/5 to-purple-500/5">
+                  <button
+                    onClick={handleWhatsApp}
+                    className="bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold py-4 px-12 rounded-2xl hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-green-500/50"
+                  >
+                    احجز باقتك الآن عبر واتساب
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
