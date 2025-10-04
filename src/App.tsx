@@ -411,10 +411,10 @@ function App() {
                     <p className="text-2xl font-black text-white">2500 <span className="text-sm text-gray-400">EGP</span></p>
                   </div>
                   <div className="text-center relative">
-                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                    <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
                       <span className="bg-yellow-500 text-black text-xs font-bold px-2 py-1 rounded">الأفضل</span>
                     </div>
-                    <h4 className="text-orange-400 font-bold text-lg mb-1">باقة التوثيق المتكاملة</h4>
+                    <h4 className="text-orange-400 font-bold text-lg mb-1 mt-2">باقة التوثيق المتكاملة</h4>
                     <p className="text-2xl font-black text-white">3500 <span className="text-sm text-gray-400">EGP</span></p>
                   </div>
                 </div>
