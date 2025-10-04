@@ -93,15 +93,6 @@ function App() {
     }
   ]
 
-  const livestreamService = {
-    id: 'livestream',
-    title: 'الـ Live Stream للـ Events',
-    titleEn: 'Live Stream for Events',
-    url: 'https://vimeo.com/showcase/livestream-for-events',
-    icon: <Radio className="w-8 h-8" />,
-    description: 'بث مباشر احترافي للفعاليات والمؤتمرات'
-  }
-
   const handleWhatsApp = () => {
     window.open('https://wa.me/201150037441', '_blank')
   }
@@ -122,6 +113,17 @@ function App() {
 
       {/* Hero Section */}
       <div className="relative overflow-hidden min-h-screen flex items-center justify-center">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img 
+            src="/hero-image.jpg" 
+            alt="elstudioo media production" 
+            className="w-full h-full object-cover"
+          />
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80"></div>
+        </div>
+        
         {/* Cinematic Grid Overlay */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]"></div>
         
@@ -132,13 +134,13 @@ function App() {
             <span className="text-purple-300 text-sm font-medium tracking-wider">MEDIA PRODUCTION</span>
           </div>
           
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-white mb-6 tracking-tight">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-pink-200">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-white mb-6 tracking-tight drop-shadow-2xl">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-pink-200" style={{ textShadow: '0 0 40px rgba(0,0,0,0.8)' }}>
               elstudioo
             </span>
           </h1>
           
-          <p className="text-xl md:text-3xl text-gray-400 mb-12 max-w-3xl mx-auto font-light">
+          <p className="text-xl md:text-3xl text-white mb-12 max-w-3xl mx-auto font-medium drop-shadow-lg" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.7)' }}>
             Your Creative Media Production Partner
           </p>
           
@@ -378,45 +380,6 @@ function App() {
                 </div>
               </div>
             ))}
-
-            {/* Live Stream Service */}
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-pink-600 rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition duration-500"></div>
-              <a
-                href={livestreamService.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative block bg-gradient-to-br from-gray-900 to-black backdrop-blur-xl rounded-3xl p-12 border border-white/10 group-hover:border-red-500/50 transition-all duration-300 overflow-hidden"
-              >
-                {/* Animated Background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-red-600/0 to-pink-600/0 group-hover:from-red-600/10 group-hover:to-pink-600/10 transition-all duration-500"></div>
-                
-                <div className="relative z-10 flex items-center gap-8">
-                  <div className="w-24 h-24 bg-gradient-to-br from-red-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                    {livestreamService.icon}
-                  </div>
-                  
-                  <div className="flex-1 text-right">
-                    <h3 className="text-4xl font-bold text-white mb-3 group-hover:text-red-300 transition-colors">
-                      {livestreamService.title}
-                    </h3>
-                    <p className="text-xl text-red-400 mb-4 font-medium">
-                      {livestreamService.titleEn}
-                    </p>
-                    <p className="text-lg text-gray-400 leading-relaxed">
-                      {livestreamService.description}
-                    </p>
-                    <p className="text-sm text-gray-500 mt-4">
-                      اتصل بنا للحصول على عرض سعر مخصص
-                    </p>
-                  </div>
-
-                  <div className="flex items-center gap-2 text-red-400 group-hover:text-red-300 transition-colors flex-shrink-0">
-                    <ChevronRight className="w-8 h-8 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-              </a>
-            </div>
           </div>
 
           {/* Pricing Comparison Table */}
