@@ -1,4 +1,4 @@
-import { Play, Phone, MessageCircle, Video, Award, Sparkles, ChevronRight, Film, Camera, Clapperboard, Radio, Globe, Check, Tag, TrendingDown, X } from 'lucide-react'
+import { Play, Phone, MessageCircle, Video, Award, Sparkles, ChevronRight, Film, Camera, Clapperboard, Globe, Check, Tag, TrendingDown, X } from 'lucide-react'
 
 function App() {
 
